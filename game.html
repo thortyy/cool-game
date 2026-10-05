@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#10152d">
+  <title>Little Lantern — A Skybound Adventure</title>
+  <link rel="stylesheet" href="styly.css">
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topline">
+      <div class="brand"><div class="brand-mark" aria-hidden="true">✦</div><div><h1>Little Lantern</h1><p>A skybound adventure</p></div></div>
+      <div class="top-actions"><button class="small-button" id="soundButton" type="button" aria-label="Toggle sound">♪ Sound on</button><button class="small-button" id="pauseButton" type="button" aria-label="Pause game">Ⅱ Pause</button></div>
+    </header>
+    <section class="game-frame" aria-label="Little Lantern platform game">
+      <canvas id="game" width="960" height="540" aria-label="Pixel-art platform adventure. Move with arrow keys or A and D, press Space or W twice to double-jump, and Shift or X to dash."></canvas>
+      <div class="hud" aria-live="polite">
+        <div class="hud-group"><div class="pill level-pill"><span class="icon">🌤</span><span id="levelName">Meadow of Mornings</span></div><div class="pill"><span class="icon">🪙</span><span id="coinCount">0</span></div><div class="pill"><span class="icon">✦</span><span id="scoreCount">000000</span></div></div>
+        <div class="hud-group"><div class="pill"><span class="icon">♥</span><span id="lifeCount">♥ ♥ ♥</span></div></div>
+      </div>
+      <button class="small-button fullscreen-toggle" id="fullscreenButton" type="button" aria-label="Enter fullscreen">⛶ Fullscreen</button>
+      <div class="level-progress" role="progressbar" aria-label="Level progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div>
+      <div class="toast" id="toast" role="status"></div>
+      <div class="overlay" id="overlay">
+        <div class="card"><p class="eyebrow" id="eyebrow">A little adventure awaits</p><h2 id="overlayTitle">Find your<br>bright side.</h2><p class="description" id="overlayText">Explore three handcrafted worlds, find hidden starlight, and watch for low-ceiling spike tunnels: jumping won't fit, so dash through with Shift or X.</p><button class="main-button" id="startButton" type="button">Start adventure&nbsp; →</button><section class="scoreboard" id="scoreboard" hidden aria-label="GitHub score leaderboard"><h3>🏆 Valley leaderboard</h3><div class="score-fields"><label>GitHub repository (owner/repo)<input id="scoreRepo" value="thortyy/cool-game" autocomplete="off"></label><label>Your player name<input id="playerName" maxlength="20" placeholder="Pip" autocomplete="nickname"></label></div><div class="score-actions"><button class="score-button" id="loadScores" type="button">Refresh scores</button><a class="score-button primary" id="submitScore" href="#" target="_blank" rel="noopener noreferrer">Submit score on GitHub</a></div><p class="score-status" id="scoreStatus" role="status">Set a public GitHub repository with Issues enabled.</p><div class="score-table-wrap"><table class="score-table"><thead><tr><th>#</th><th>Player</th><th>Score</th></tr></thead><tbody id="scoreRows"><tr><td colspan="3">The leaderboard is empty.</td></tr></tbody></table></div><p class="score-note">Top ten of the latest 100 validated scores. Submit through GitHub Issues; sign in to post. Scores are not replay-verified, so this is a friendly rather than cheat-proof leaderboard.</p></section><div class="key-hint"><span><kbd>←</kbd> <kbd>→</kbd> move</span><span><kbd>Space</kbd> jump twice</span><span><kbd>Shift</kbd> dash</span><span><kbd>P</kbd> pause</span></div></div>
+      </div>
+    </section>
+    <nav class="controls" aria-label="Touch game controls">
+      <div class="control-cluster"><button class="touch-button" data-control="left" aria-label="Move left">◀</button><button class="touch-button" data-control="right" aria-label="Move right">▶</button></div>
+      <div class="control-cluster"><button class="touch-button dash" data-control="dash" aria-label="Dash">✦</button><button class="touch-button jump" data-control="jump" aria-label="Jump">↑</button></div>
+    </nav>
+    <footer><span>Move <strong>← → / A D</strong> · Double jump <strong>Space ×2</strong> · Dash <strong>Shift / X</strong></span><span>Made of stardust &amp; good timing</span></footer>
+  </main>
+<script src="scripty.js" defer></script>
+</body>
+</html>
